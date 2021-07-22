@@ -9,7 +9,7 @@ namespace Statistics
         double _maxThreshold;
         List<IAlerter> _alerter = new List<IAlerter>();
 
-        public void AlertStats(double _maxThreshold, List<IAlerter> alerters)
+        public StatisticsAlerter(double _maxThreshold, List<IAlerter> alerters)
         {
             this._maxThreshold = _maxThreshold;
             for (int i = 0; i < alerters.Count; ++i)

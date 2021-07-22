@@ -5,7 +5,7 @@ namespace Statistics
 {
     public class StatisticsComputer
     {
-        static public StatisticsData CalculateStatistics(List<double> numbers) {
+        public static StatisticsData CalculateStatistics(List<double> numbers) {
             double _avg;
             double _max;
             double _min;
