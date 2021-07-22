@@ -8,7 +8,7 @@ namespace Statistics
     {
         public bool _emailSent = false;
 	
-        public void Alert(double _maxThreshold, double _max)
+        void IAlerter.Alert(double _maxThreshold, double _max)
         {
             if (_max > _maxThreshold)
             {
