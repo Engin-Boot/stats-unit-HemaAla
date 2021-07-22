@@ -5,10 +5,10 @@ namespace Statistics
 {
     public class StatisticsComputer
     {
-        static public StattisticsData CalculateStatistics(List<decimal> numbers) {
-            decimal _avg;
-            decimal _max;
-            decimal _min;
+        static public StatisticsData CalculateStatistics(List<double> numbers) {
+            double _avg;
+            double _max;
+            double _min;
 
             if (numbers.Count == 0)
                 return new StattisticsData();

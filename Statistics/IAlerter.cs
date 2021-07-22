@@ -4,6 +4,6 @@ namespace Statistics
 {
     public interface IAlerter
     {
-        void Alert(decimal maxThreshold, decimal max);
+        void Alert(double maxThreshold, double max);
     }
 }

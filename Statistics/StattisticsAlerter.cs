@@ -6,10 +6,10 @@ namespace Statistics
 {
     public class StatisticsAlerter
     {
-        decimal _maxThreshold;
+        double _maxThreshold;
         List<IAlerter> _alerter = new List<IAlerter>();
 
-        public StatsAlerter(decimal _maxThreshold, List<IAlerter> alerters)
+        public void AlertStats(double _maxThreshold, List<IAlerter> alerters)
         {
             this._maxThreshold = _maxThreshold;
             for (int i = 0; i < alerters.Count; ++i)
@@ -19,9 +19,9 @@ namespace Statistics
         {
             _alerter.Add(alerter);
         }
-        public void CheckAndAlert(List<decimal> numbers)
+        public void CheckAndAlert(List<double> numbers)
         {
-            decimal max = StatisticsComputer.CalculateStatistics(numbers).max;
+            double max = StatisticsComputer.CalculateStatistics(numbers).max;
             for (int i = 0; i < _alerter.Count; ++i)
                 _alerter[i].Alert(_maxThreshold, max);
         }

@@ -6,10 +6,10 @@ namespace Statistics
 {
     public class StatisticsData
     {
-        public decimal average;
-        public decimal max;
-        public decimal min;
-        public StatisticsData(decimal _avg = Double.NaN, decimal _max = Double.NaN, decimal _min = Double.NaN)
+        public double average;
+        public double max;
+        public double min;
+        public StatisticsData(double _avg = Double.NaN, double _max = Double.NaN, double _min = Double.NaN)
         {
             this.average = _avg;
             this.max = _max;
