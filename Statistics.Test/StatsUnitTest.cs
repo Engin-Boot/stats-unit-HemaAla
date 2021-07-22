@@ -9,37 +9,44 @@ namespace Statistics.Test
         [Fact]
         public void ReportsAverageMinMax()
         {
-            var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(
+            var StatisticsComputer = new StatisticsComputer();
+            var computedStats = StatisticsComputer.CalculateStatistics(
                 new List<___>{1.5, 8.9, 3.2, 4.5});
-            float epsilon = 0.001F;
-            Assert.True(Math.Abs(statsComputer.average - 4.525) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
-            Assert.True(Math.Abs(statsComputer.min - 1.5) <= epsilon);
+            decimal epsilon = 0.001F;
+            Assert.True(Math.Abs(StatisticsComputer.average - 4.525) <= epsilon);
+            Assert.True(Math.Abs(StatisticsComputer.max - 8.9) <= epsilon);
+            Assert.True(Math.Abs(StatisticsComputer.min - 1.5) <= epsilon);
         }
         [Fact]
         public void ReportsNaNForEmptyInput()
         {
-            var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(
+            var StatisticsComputer = new StatisticsComputer();
+            var computedStats = StatisticsComputer.CalculateStatistics(
                 new List<___>{});
             //All fields of computedStats (average, max, min) must be
             //Double.NaN (not-a-number), as described in
             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
+
+	    Assert.True(Double.IsNaN(computedStats.average));
+	    Assert.True(Double.IsNaN(computedStats.max));
+	    Assert.True(Double.IsNaN(computedStats.min));
+
+		
+
         }
         [Fact]
         public void RaisesAlertsIfMaxIsMoreThanThreshold()
         {
-            var emailAlert = new EmailAlert();
-            var ledAlert = new LEDAlert();
+            var emailAlert = new EmailAlerter();
+            var ledAlert = new LedAlerter();
             IAlerter[] alerters = {emailAlert, ledAlert};
 
-            const float maxThreshold = 10.2;
-            var statsAlerter = new StatsAlerter(maxThreshold, alerters);
+            const decimal maxThreshold = 10.2;
+            var statsAlerter = new StatisticssAlerter(maxThreshold, alerters);
             statsAlerter.checkAndAlert(new List<___>{0.2, 11.9, 4.3, 8.5});
 
-            Assert.True(emailAlert.emailSent);
-            Assert.True(ledAlert.ledGlows);
+            Assert.True(emailAlert._emailSent);
+            Assert.True(ledAlert._ledGlowed);
         }
     }
 }
