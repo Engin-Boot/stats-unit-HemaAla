@@ -44,7 +44,7 @@ namespace Statistics.Test
 
             const float maxThreshold = 10.2;
             var statsAlerter = new StatisticsAlerter(maxThreshold, alerters);
-            statsAlerter.checkAndAlert(new List<___>{0.2, 11.9, 4.3, 8.5});
+            statsAlerter.CheckAndAlert(new List<___>{0.2, 11.9, 4.3, 8.5});
 
             Assert.True(emailAlert._emailSent);
             Assert.True(ledAlert._ledGlowed);
