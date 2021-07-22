@@ -12,7 +12,7 @@ namespace Statistics.Test
             var StatisticsComputer = new StatisticsComputer();
             var computedStats = StatisticsComputer.CalculateStatistics(
                 new List<___>{1.5, 8.9, 3.2, 4.5});
-            decimal epsilon = 0.001F;
+            double epsilon = 0.001F;
             Assert.True(Math.Abs(StatisticsComputer.average - 4.525) <= epsilon);
             Assert.True(Math.Abs(StatisticsComputer.max - 8.9) <= epsilon);
             Assert.True(Math.Abs(StatisticsComputer.min - 1.5) <= epsilon);
@@ -41,7 +41,7 @@ namespace Statistics.Test
             var ledAlert = new LedAlerter();
             IAlerter[] alerters = {emailAlert, ledAlert};
 
-            const decimal maxThreshold = 10.2;
+            const double maxThreshold = 10.2;
             var statsAlerter = new StatisticssAlerter(maxThreshold, alerters);
             statsAlerter.checkAndAlert(new List<___>{0.2, 11.9, 4.3, 8.5});
 
