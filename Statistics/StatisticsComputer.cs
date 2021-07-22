@@ -15,7 +15,7 @@ namespace Statistics
 
             _max = numbers[0];
             _min = numbers[0];
-            _avg = 0.0m;
+            _avg = 0.0;
 
             foreach(double number in numbers)
             {
