@@ -25,7 +25,7 @@ namespace Statistics
                     _min = number;
                 _avg += number;
             }
-            average /= numbers.Count;
+            _avg /= numbers.Count;
 
             return ( new StatisticsData(_avg, _max, _min) );
         }
